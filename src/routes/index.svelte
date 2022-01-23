@@ -26,8 +26,8 @@
   }
 </script>
 
-<div class="container my-8 py-2 max-w-lg rounded overflow-hidden shadow-lg bg-slate-300">
-  <h1 class="font-bold font-mono text-2xl mb-2">PROJECT LITERATE</h1>
+<div class="ctn">
+  <h1 class="txt">PROJECT LITERATE</h1>
   <!-- get the text of a randomly picked question from the api request -->
   <h2 class="text-lg">{items[randomN].text}</h2>
   <div class="my-4">

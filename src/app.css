@@ -5,3 +5,11 @@
 .btn{
     @apply bg-slate-700 text-white hover:bg-slate-600 py-2 px-4 rounded;
 }
+
+.ctn{
+    @apply container my-8 py-2 max-w-lg rounded overflow-hidden shadow-lg bg-slate-300;
+}
+
+.txt{
+    @apply font-bold font-mono text-2xl mb-2;
+}
