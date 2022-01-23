@@ -16,13 +16,19 @@
 </script>
 
 <script>
-  import axios from "axios";
+
+  import axiosInstance from "$lib/axios";
+  import { onMount } from 'svelte';
 
   export let items;
   let questions = items;
   let inputValue = "";
+  let access_token;
   let id;
-  console.log(questions);
+
+  onMount(()=>{
+    access_token = localStorage.getItem('access_token')
+  })
 
   function updateQuestion(text, approved, id_) {
     inputValue = text;
@@ -37,7 +43,7 @@
         formData.append("text", inputValue);
         formData.append("approved", "true");
 
-        const submit = await axios.put(
+        const submit = await axiosInstance.put(
           `http://localhost:8000/approve-question/${id}`,
           formData
         );
@@ -49,6 +55,7 @@
   }
 </script>
 
+{#if access_token !==null}
 <div class="ctn flex flex-col">
   <h1 class="txt my-1">APPROVE QUESTIONS</h1>
   <input class="rounded h-8 px-2 my-1" type="text" bind:value={inputValue} />
@@ -68,3 +75,7 @@
   </ul>
   <button class="btn my-2 mb-1" on:click={approveQuestion}>Approve</button>
 </div>
+{:else}
+<a href="/auth/login">You need to login for that</a>
+{/if}
+
