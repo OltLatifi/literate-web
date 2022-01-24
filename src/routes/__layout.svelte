@@ -2,7 +2,7 @@
     import Footer from "$lib/footer.svelte";
     import { onMount } from 'svelte';
     import '../app.css'
-
+    
     let access_token;
     let refresh_token;
 
@@ -13,7 +13,6 @@
 
 
     const time = new Date();
-    let hour = time.getHours();
     let year = time.getFullYear();
 
 </script>
