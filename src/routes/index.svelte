@@ -1,7 +1,7 @@
 <script context="module">
   import Timer from "$lib/counter.svelte";
   export async function load({ fetch }) {
-    let res = await fetch("http://localhost:8000/approved-questions/");
+    let res = await fetch("https://oltlatifi.pythonanywhere.com/approved-questions/");
 
     if (res.ok) {
       return {

@@ -6,7 +6,7 @@
             if(inputValue !== ""){
                 let formData = new FormData()
                 formData.append('text', inputValue)
-                const submit = await axios.post('http://localhost:8000/create-questions/', formData)
+                const submit = await axios.post('https://oltlatifi.pythonanywhere.com/create-questions/', formData)
                 inputValue = '';
             }
 

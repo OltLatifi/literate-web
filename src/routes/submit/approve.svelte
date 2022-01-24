@@ -1,6 +1,6 @@
 <script context="module">
   export async function load({ fetch }) {
-    let res = await fetch("http://localhost:8000/questions/");
+    let res = await fetch("https://oltlatifi.pythonanywhere.com/questions/");
     if (res.ok) {
       return {
         props: {
@@ -44,7 +44,7 @@
         formData.append("approved", "true");
 
         const submit = await axiosInstance.put(
-          `http://localhost:8000/approve-question/${id}`,
+          `https://oltlatifi.pythonanywhere.com/approve-question/${id}`,
           formData
         );
         window.location.reload();

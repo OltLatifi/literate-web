@@ -11,7 +11,7 @@
 
 
     function logIn(){
-        axiosInstance.post(`http://localhost:8000/api/token/`, {
+        axiosInstance.post(`https://oltlatifi.pythonanywhere.com/api/token/`, {
             username:username,
             password:password}
             )
