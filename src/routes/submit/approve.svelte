@@ -16,8 +16,10 @@
 </script>
 
 <script>
+import axiosInstance from "$lib/axios";
 
-  import axiosInstance from "$lib/axios";
+
+  import axios from "axios";
   import { onMount } from 'svelte';
 
   export let items;
@@ -25,12 +27,20 @@
   let inputValue = "";
   let access_token;
   let id;
+  if (typeof window !== 'undefined') {
+  const axiosInstance = axios.create({
+    timeout: 5000,
+    headers: {
+        Authorization: localStorage.getItem('access_token')
+        ? `Bearer ${localStorage.getItem('access_token')}`// this is like saying 'Bearer 49582048902485kfjdkj'
+        : null,                                        // so it's just the access token on the header 
+        'Content-Type': 'application/json',            // if there is a token format it, else return null
+        accept: 'application/json'
+    },
+})}
 
   onMount(()=>{
-    if (typeof window !== 'undefined') {
-
-      access_token = localStorage.getItem('access_token')
-    }
+    access_token = localStorage.getItem('access_token')
   })
 
   function updateQuestion(text, approved, id_) {
