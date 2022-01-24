@@ -21,7 +21,6 @@
         console.log(access_token)
     })}
 
-    if (typeof localStorage !== 'undefined') {
     function logIn(){
         axiosInstance.post(`https://oltlatifi.pythonanywhere.com/api/token/`, {
             username:username,
@@ -34,7 +33,7 @@
             'JWT'+ localStorage.getItem('access_token');
             window.location.reload();
         })
-    }}
+    }
 </script>
 
 
