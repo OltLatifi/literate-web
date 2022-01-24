@@ -35,7 +35,7 @@
     {:else}
         <input class="rounded h-8 px-2 my-2" type="text" placeholder="Username" bind:value={username}>
         <input class="rounded h-8 px-2 my-2" type="password" placeholder="Password" bind:value={password}>
-        <buton class="btn" on:click={logIn}>Log in</buton>
+        <buton class="btn my-2" on:click={logIn}>Log in</buton>
     {/if}
 </div>
 

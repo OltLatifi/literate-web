@@ -1,5 +1,4 @@
 <script lang="ts">
-    import Greeting from "$lib/greeting.svelte";
     import Footer from "$lib/footer.svelte";
     import { onMount } from 'svelte';
     import '../app.css'
