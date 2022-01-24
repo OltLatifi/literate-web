@@ -26,7 +26,6 @@
   let inputValue = "";
   let access_token;
   let id;
-  if (typeof window !== 'undefined') {
   const axiosInstance = axios.create({
     timeout: 5000,
     headers: {
@@ -36,7 +35,7 @@
         'Content-Type': 'application/json',            // if there is a token format it, else return null
         accept: 'application/json'
     },
-})}
+})
 if (typeof localStorage !== 'undefined') {
   onMount(()=>{
     access_token = localStorage.getItem('access_token')
