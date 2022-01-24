@@ -76,6 +76,8 @@
   <button class="btn my-2 mb-1" on:click={approveQuestion}>Approve</button>
 </div>
 {:else}
-<a href="/auth/login">You need to login for that</a>
+<div class="ctn flex flex-col">
+  <a href="/auth/login" class="btn">You need to login for that</a>
+</div>
 {/if}
 

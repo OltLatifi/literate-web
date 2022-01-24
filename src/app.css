@@ -7,7 +7,7 @@
 }
 
 .ctn{
-    @apply container my-8 py-2 max-w-lg rounded overflow-hidden shadow-lg bg-slate-300;
+    @apply container mt-4 py-2 max-w-lg rounded overflow-hidden shadow-lg bg-slate-300;
 }
 
 .txt{

@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+import { Promise } from "es6-promise";
 
 const axiosInstance = axios.create({
     timeout: 5000,
@@ -11,5 +11,6 @@ const axiosInstance = axios.create({
         accept: 'application/json'
     },
 })
+
 
 export default axiosInstance

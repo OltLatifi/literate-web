@@ -29,11 +29,13 @@
 <div class="ctn flex flex-col">
     <h1 class="txt">Log in</h1>
     <h3 class="text-lg">For superuser access</h3>
-    <input class="rounded h-8 px-2 my-2" type="text" placeholder="Username" bind:value={username}>
-    <input class="rounded h-8 px-2 my-2" type="password" placeholder="Password" bind:value={password}>
-    <button class="btn my-2" on:click={logIn}>Log in</button>
+    
+    {#if access_token !== null}
+        <a href="/submit/approve/" class="btn my-2">Approve some questions</a>
+    {:else}
+        <input class="rounded h-8 px-2 my-2" type="text" placeholder="Username" bind:value={username}>
+        <input class="rounded h-8 px-2 my-2" type="password" placeholder="Password" bind:value={password}>
+        <buton class="btn" on:click={logIn}>Log in</buton>
+    {/if}
 </div>
 
-{#if access_token !== null}
-    <a href="/submit/approve/">Approve some questions</a>
-{/if}
