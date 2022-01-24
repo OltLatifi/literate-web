@@ -37,10 +37,10 @@
         accept: 'application/json'
     },
 })}
-
+if (typeof localStorage !== 'undefined') {
   onMount(()=>{
     access_token = localStorage.getItem('access_token')
-  })
+  })}
 
   function updateQuestion(text, approved, id_) {
     inputValue = text;
