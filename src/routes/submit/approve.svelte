@@ -27,7 +27,10 @@
   let id;
 
   onMount(()=>{
-    access_token = localStorage.getItem('access_token')
+    if (typeof window !== 'undefined') {
+
+      access_token = localStorage.getItem('access_token')
+    }
   })
 
   function updateQuestion(text, approved, id_) {
@@ -55,13 +58,14 @@
   }
 </script>
 
+
 {#if access_token !==null}
 <div class="ctn flex flex-col">
   <h1 class="txt my-1">APPROVE QUESTIONS</h1>
   <input class="rounded h-8 px-2 my-1" type="text" bind:value={inputValue} />
   <ul>
     {#each questions as question}
-      {#if !question.approved}
+      {#if !(question.approved)}
         <li>
           <button
             class="bg-slate-200 w-full my-2 rounded shadow-sm"
