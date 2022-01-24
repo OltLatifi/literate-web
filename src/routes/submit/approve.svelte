@@ -16,7 +16,6 @@
 </script>
 
 <script>
-import axiosInstance from "$lib/axios";
 
 
   import axios from "axios";
