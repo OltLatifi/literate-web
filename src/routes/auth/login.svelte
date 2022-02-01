@@ -42,6 +42,8 @@
     
     {#if access_token !== null}
         <a href="/submit/approve/" class="btn my-2">Approve some questions</a>
+        <a href="/jokes/approve/" class="btn my-2">Approve some jokes</a>
+
     {:else}
         <input class="rounded h-8 px-2 my-2" type="text" placeholder="Username" bind:value={username}>
         <input class="rounded h-8 px-2 my-2" type="password" placeholder="Password" bind:value={password}>
